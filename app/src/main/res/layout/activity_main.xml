@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/nota1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:ems="10"
+        android:hint="Nota 1"
+        android:inputType="number|numberDecimal|numberSigned"
+        app:layout_constraintBottom_toTopOf="@+id/nota2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/nota2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="29dp"
+        android:ems="10"
+        android:hint="Nota 2"
+        android:inputType="number|numberDecimal|numberSigned"
+        app:layout_constraintBottom_toTopOf="@+id/nota3"
+        app:layout_constraintStart_toStartOf="@+id/nota1"
+        app:layout_constraintTop_toBottomOf="@+id/nota1" />
+
+    <EditText
+        android:id="@+id/nota3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="21dp"
+        android:ems="10"
+        android:hint="Nota 3"
+        android:inputType="number|numberDecimal|numberSigned"
+        app:layout_constraintBottom_toTopOf="@+id/nota4"
+        app:layout_constraintStart_toStartOf="@+id/nota2"
+        app:layout_constraintTop_toBottomOf="@+id/nota2" />
+
+    <EditText
+        android:id="@+id/nota4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:ems="10"
+        android:hint="Nota 3"
+        android:inputType="number|numberDecimal|numberSigned"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/nota3"
+        app:layout_constraintTop_toBottomOf="@+id/nota3" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="26dp"
+        android:text="Resultado:"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/resultado"
+        app:layout_constraintStart_toStartOf="@+id/nota4"
+        app:layout_constraintTop_toBottomOf="@+id/nota4" />
+
+    <Button
+        android:id="@+id/buttonCalcular"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="62dp"
+        android:onClick="calcular"
+        android:text="Calcular"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonLimpar"
+        app:layout_constraintEnd_toStartOf="@+id/buttonLimpar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonLimpar" />
+
+    <Button
+        android:id="@+id/buttonLimpar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="30dp"
+        android:background="#2643FF"
+        android:onClick="limpar"
+        android:text="Limpar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonCalcular"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRecuperacao" />
+
+    <Button
+        android:id="@+id/buttonRecuperacao"
+        android:layout_width="148dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="recuperacao"
+        android:text="Recuperação"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLimpar"
+        app:layout_constraintEnd_toEndOf="@+id/buttonLimpar"
+        app:layout_constraintTop_toBottomOf="@+id/resultado" />
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:text="-- -- -- --"
+        app:layout_constraintBottom_toTopOf="@+id/buttonRecuperacao"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="70dp"
+        android:text="Calculador de Média"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/nota1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
