@@ -10,26 +10,28 @@
         android:id="@+id/nota1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
         android:layout_marginBottom="27dp"
         android:ems="10"
         android:hint="Nota 1"
         android:inputType="number|numberDecimal|numberSigned"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/nota2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/nota2"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
         android:id="@+id/nota2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
         android:layout_marginBottom="29dp"
         android:ems="10"
         android:hint="Nota 2"
         android:inputType="number|numberDecimal|numberSigned"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/nota3"
-        app:layout_constraintStart_toStartOf="@+id/nota1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nota1" />
 
     <EditText
@@ -40,6 +42,7 @@
         android:ems="10"
         android:hint="Nota 3"
         android:inputType="number|numberDecimal|numberSigned"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/nota4"
         app:layout_constraintStart_toStartOf="@+id/nota2"
         app:layout_constraintTop_toBottomOf="@+id/nota2" />
@@ -52,6 +55,7 @@
         android:ems="10"
         android:hint="Nota 3"
         android:inputType="number|numberDecimal|numberSigned"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/nota3"
         app:layout_constraintTop_toBottomOf="@+id/nota3" />
@@ -61,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="26dp"
+        android:layout_marginBottom="27dp"
         android:text="Resultado:"
         android:textSize="24sp"
         android:textStyle="bold|italic"
@@ -86,7 +90,7 @@
         android:id="@+id/buttonLimpar"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="23dp"
+        android:layout_marginEnd="22dp"
         android:layout_marginBottom="30dp"
         android:background="#2643FF"
         android:onClick="limpar"
@@ -100,6 +104,7 @@
         android:id="@+id/buttonRecuperacao"
         android:layout_width="148dp"
         android:layout_height="0dp"
+        android:layout_marginEnd="1dp"
         android:layout_marginBottom="8dp"
         android:onClick="recuperacao"
         android:text="Recuperação"
@@ -130,4 +135,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/verificarRecu"
+        android:layout_width="182dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Verificar Recuperação"
+        android:inputType="number|numberDecimal|numberSigned"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/buttonCalcular"
+        app:layout_constraintEnd_toStartOf="@+id/buttonRecuperacao"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultado" />
 </androidx.constraintlayout.widget.ConstraintLayout>

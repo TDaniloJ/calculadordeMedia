@@ -2,6 +2,7 @@ package com.tecnojogos.calcularmedia;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -11,9 +12,10 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText n1, n2, n3, n4;
+    private EditText n1, n2, n3, n4, notaRecu;
     private TextView resultado;
     private Button bt;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         resultado = findViewById(R.id.resultado);
 
         bt = findViewById(R.id.buttonRecuperacao);
+        notaRecu = findViewById(R.id.verificarRecu);
     }
 
     public void calcular(View view) {
@@ -41,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         } else if(media >= 5){
             resultado.setText("Recuperação! Média é: " + media);
             bt.setVisibility(View.VISIBLE);
+            notaRecu.setVisibility(View.VISIBLE);
         } else if(media < 5) {
             resultado.setText("Reprovado! Média é: " + media);
         }
@@ -53,9 +57,16 @@ public class MainActivity extends AppCompatActivity {
         n4.setText("");
         resultado.setText(" - - - - -");
         bt.setVisibility(View.INVISIBLE);
+        notaRecu.setVisibility(View.INVISIBLE);
     }
 
     public void recuperacao(View view) {
-        //teste
+        Double ntRecu = Double.parseDouble(notaRecu.getText().toString());
+
+        if (ntRecu >= 5) {
+            resultado.setText("Aprovador! Parabéns! ,Média é: " + ntRecu);
+        } else {
+            resultado.setText("Reprovador! Estude Mais! ,Média é: " + ntRecu);
+        }
     }
 }
